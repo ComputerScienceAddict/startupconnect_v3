@@ -1,0 +1,499 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System CSS Variables */
+:root {
+  /* Border Radius */
+  --border-radius-base: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 16px;
+  --border-radius-full: 9999px;
+
+  /* Colors - Neutral */
+  --white: #fff;
+  --neutral-10: #f4f5f6;
+  --neutral-20: #e7e9ee;
+  --neutral-30: #d0d5dd;
+  --neutral-40: #afb5c0;
+  --neutral-50: #8d96a5;
+  --neutral-60: #677283;
+  --neutral-70: #495365;
+  --neutral-80: #2f3a4c;
+  --neutral-90: #1b222c;
+
+  /* Colors - Green */
+  --green-10: #eaf6ef;
+  --green-20: #b8dbc8;
+  --green-30: #86caa5;
+  --green-40: #53b57f;
+  --green-50: #098842;
+  --green-60: #1e6b41;
+  --green-70: #195936;
+
+  /* Colors - Blue */
+  --blue-10: #f1f4f9;
+  --blue-20: #c3d0e3;
+  --blue-30: #97b6e5;
+  --blue-40: #6597e0;
+  --blue-50: #366cbf;
+  --blue-60: #28518f;
+  --blue-70: #214475;
+
+  /* Colors - Red */
+  --red-10: #f9f1f1;
+  --red-20: #f5beba;
+  --red-30: #e59d9a;
+  --red-40: #e36d66;
+  --red-50: #b83a33;
+  --red-60: #942f2a;
+  --red-70: #782722;
+
+  /* Colors - Yellow */
+  --yellow-10: #fcf1e3;
+  --yellow-20: #fcc483;
+  --yellow-30: #f7a445;
+  --yellow-40: #de8014;
+  --yellow-50: #8f5514;
+  --yellow-60: #7a4304;
+  --yellow-70: #633a0b;
+
+  /* Background Colors */
+  --bg-light-primary: var(--white);
+  --bg-light-secondary: var(--neutral-10);
+  --bg-light-tertiary: var(--neutral-20);
+  --bg-light-disabled: var(--neutral-20);
+  --bg-dark-primary: var(--neutral-90);
+  --bg-dark-secondary: var(--neutral-80);
+  --bg-dark-tertiary: var(--neutral-70);
+  --bg-dark-disabled: var(--neutral-70);
+
+  /* Accent Backgrounds */
+  --bg-accent-01: var(--green-50);
+  --bg-accent-02: var(--green-60);
+  --bg-accent-03: var(--green-10);
+  --bg-danger-01: var(--red-50);
+  --bg-danger-02: var(--red-60);
+  --bg-danger-03: var(--red-10);
+  --bg-warning-01: var(--yellow-50);
+  --bg-warning-02: var(--yellow-60);
+  --bg-warning-03: var(--yellow-10);
+  --bg-info-01: var(--blue-50);
+  --bg-info-02: var(--blue-60);
+  --bg-info-03: var(--blue-10);
+
+  /* Content Colors */
+  --content-primary: var(--neutral-90);
+  --content-secondary: var(--neutral-70);
+  --content-disabled: var(--neutral-40);
+  --content-placeholder: var(--neutral-60);
+  --content-danger: var(--red-50);
+  --content-warning: var(--yellow-50);
+  --content-positive: var(--green-50);
+  --content-info: var(--blue-50);
+
+  /* Border Colors */
+  --border-primary: var(--neutral-60);
+  --border-hover: var(--neutral-70);
+  --border-disabled: var(--neutral-20);
+  --border-active: var(--blue-50);
+  --border-danger: var(--red-50);
+  --border-divider: var(--neutral-20);
+  --border-dark-divider: var(--neutral-70);
+
+  /* Link Colors */
+  --link-web: var(--green-60);
+  --link-web-hover: var(--green-70);
+  --link-web-visited: var(--green-60);
+  --link-ui: var(--blue-50);
+  --link-ui-hover: var(--blue-60);
+  --link-ui-visited: var(--blue-60);
+
+  /* Spacing Scale */
+  --spacing-00: 0;
+  --spacing-01: 2px;
+  --spacing-02: 4px;
+  --spacing-03: 6px;
+  --spacing-04: 8px;
+  --spacing-05: 12px;
+  --spacing-06: 16px;
+  --spacing-07: 20px;
+  --spacing-08: 24px;
+  --spacing-09: 32px;
+  --spacing-10: 40px;
+  --spacing-11: 48px;
+  --spacing-12: 56px;
+  --spacing-13: 64px;
+  --spacing-14: 72px;
+  --spacing-15: 80px;
+  --spacing-16: 96px;
+
+  /* Typography */
+  --font-sans: "Noto Sans", sans-serif;
+  --font-size-01: 0.75rem;
+  --font-size-02: 0.875rem;
+  --font-size-03: 1rem;
+  --font-size-04: 1.125rem;
+  --font-size-05: 1.25rem;
+  --font-size-06: 1.5rem;
+  --font-size-07: 1.875rem;
+  --font-size-08: 2.25rem;
+  --font-size-09: 3rem;
+  --font-size-10: 3.25rem;
+  --font-size-11: 3.75rem;
+  --font-size-12: 4.5rem;
+  --font-size-13: 6em;
+
+  /* Line Heights */
+  --line-height-01: 1rem;
+  --line-height-02: 1.25rem;
+  --line-height-03: 1.5rem;
+  --line-height-04: 1.75rem;
+  --line-height-05: 2rem;
+  --line-height-06: 2.5rem;
+  --line-height-07: 3rem;
+  --line-height-08: 4rem;
+  --line-height-09: 4.25rem;
+  --line-height-10: 5rem;
+  --line-height-11: 6rem;
+  --line-height-12: 8rem;
+
+  /* Gradients */
+  --premium-gradient: linear-gradient(246deg, var(--blue-70) 0%, #254c84 29%, var(--blue-40) 97%);
+  --premium-gradient-dark: linear-gradient(246deg, #6f8bcd, #8ea3d7 29%, #ccdcff 97%);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --content-primary-themed: var(--white);
+  --content-secondary-themed: var(--neutral-20);
+  --content-disabled-themed: var(--neutral-60);
+  --content-placeholder-themed: var(--neutral-50);
+  --content-danger-themed: var(--red-40);
+  --content-warning-themed: var(--yellow-40);
+  --content-positive-themed: var(--green-40);
+  --content-info-themed: var(--blue-30);
+  --border-primary-themed: var(--neutral-30);
+  --border-hover-themed: var(--neutral-20);
+  --border-disabled-themed: var(--neutral-80);
+  --border-active-themed: var(--blue-30);
+  --border-danger-themed: var(--red-40);
+  --border-divider-themed: var(--neutral-80);
+  --link-web-themed: var(--green-30);
+  --link-web-hover-themed: var(--green-40);
+  --link-web-visited-themed: var(--green-40);
+  --link-ui-themed: var(--blue-30);
+  --link-ui-hover-themed: var(--blue-40);
+  --link-ui-visited-themed: var(--blue-40);
+  --premium-gradient-themed: var(--premium-gradient-dark);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Facebook 2006 Styles */
+.book {
+  width: 760px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-size: 11px;
+}
+
+.pageheader {
+  background-color: #3b5998;
+  color: white;
+  padding: 5px 10px;
+  border-bottom: 1px solid #133783;
+  position: relative;
+}
+
+.pageheader h1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  display: inline-block;
+}
+
+.pageheader h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.pageheader h1 a:hover {
+  text-decoration: underline;
+}
+
+.gnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.gnav li {
+  display: inline;
+  margin-left: 10px;
+}
+
+.gnav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.gnav li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  width: 150px;
+  float: left;
+  background-color: #f7f7f7;
+  border-right: 1px solid #cccccc;
+  min-height: 400px;
+  padding: 10px;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-bottom: 5px;
+}
+
+.nav li a {
+  color: #3b5998;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+.sponsors {
+  margin-top: 20px;
+  padding: 0;
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pagebody {
+  margin-left: 170px;
+  padding: 10px;
+  background-color: white;
+}
+
+.content-header {
+  margin-bottom: 15px;
+}
+
+.content-header h1 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #3b5998;
+  margin: 0 0 5px 0;
+}
+
+.content-header p {
+  font-size: 11px;
+  color: #666666;
+  margin: 0;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.loginform,
+.registerform {
+  background-color: #f7f7f7;
+  border: 1px solid #cccccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.formtable {
+  width: 100%;
+}
+
+.formtable td {
+  padding: 3px;
+  vertical-align: top;
+}
+
+.formtable .label {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+  width: 100px;
+  font-size: 11px;
+}
+
+.inputtext,
+.inputpassword {
+  border: 1px solid #bdc7d8;
+  padding: 2px;
+  font-size: 11px;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+}
+
+.inputselect {
+  border: 1px solid #bdc7d8;
+  padding: 2px;
+  font-size: 11px;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  margin-right: 5px;
+}
+
+.formbuttons {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.inputsubmit {
+  background-color: #3b5998;
+  color: white;
+  border: 1px solid #29447e;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.inputsubmit:hover {
+  background-color: #2e4a87;
+}
+
+.inputbutton {
+  background-color: #f0f0f0;
+  color: #333333;
+  border: 1px solid #cccccc;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  cursor: pointer;
+}
+
+.inputbutton:hover {
+  background-color: #e0e0e0;
+}
+
+.securetoggle {
+  float: right;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.securetoggle a {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+.securetoggle a:hover {
+  text-decoration: underline;
+}
+
+.loginform p,
+.registerform p {
+  font-size: 11px;
+  margin: 10px 0 0 0;
+}
+
+.loginform p a,
+.registerform p a {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+.loginform p a:hover,
+.registerform p a:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  font-size: 10px !important;
+  color: #666666;
+  line-height: 1.3;
+}
+
+.terms a {
+  color: #3b5998 !important;
+}
+
+.pagefooter {
+  clear: both;
+  border-top: 1px solid #cccccc;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.fnav {
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.fnav li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.fnav li a {
+  color: #3b5998;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.fnav li a:hover {
+  text-decoration: underline;
+}
+
+.pagefooter p {
+  font-size: 10px;
+  color: #666666;
+  margin: 2px 0;
+}
+
+.bottom-sponsors {
+  width: 760px;
+  text-align: center;
+  clear: both;
+  margin: 10px auto 15px auto;
+  height: 60px;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+}
+
+/* Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Override Next.js default styles */
+html {
+  font-size: 11px;
+}
